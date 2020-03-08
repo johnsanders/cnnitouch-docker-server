@@ -1,0 +1,9 @@
+data -fstype=cifs,credentials=/home/cnnitouch/nt_creds.auth,rw,file_mode=0777,dir_mode=0777,user ://cnnlonfs01/cnni-itouch
+viz -fstype=cifs,credentials=/home/cnnitouch/nt_creds.auth,ro,user ://cnnvizfs-prod22/shared/ARKIV
+HD_IMAGES_WRITABLE -fstype=cifs,credentials=/home/cnnitouch/nt_creds.auth,rw,file_mode=0777,dir_mode=0777,user ://cnnvizfs-prod22/shared/ARKIV/new_arkiv/HD_IMAGES
+HD_STAYING_INFORMED_WRITABLE -fstype=cifs,credentials=/home/cnnitouch/nt_creds.auth,rw,file_mode=0777,dir_mode=0777,noperm ://cnnvizfs-prod22/shared/ARKIV/new_arkiv/HD_STAYING_INFORMED
+MAPS_DETAILED_WRITABLE -fstype=cifs,credentials=/home/cnnitouch/nt_creds.auth,rw,file_mode=0777,dir_mode=0777,noperm ://cnnvizfs-prod22/shared/ARKIV/new_arkiv/MAPS/HD_CNNI_DETAILED
+VISTA_FULL_WRITABLE -fstype=cifs,credentials=/home/cnnitouch/nt_creds.auth,rw,file_mode=0777,dir_mode=0777,noperm ://cnnvizfs-prod22/shared/ARKIV/new_arkiv/VISTA_FULL
+VISTA_BG_WRITABLE -fstype=cifs,credentials=/home/cnnitouch/nt_creds.auth,rw,file_mode=0777,dir_mode=0777,noperm ://cnnvizfs-prod22/shared/ARKIV/new_arkiv/VISTA_BG
+CNNT_WALL_TEASE_WRITABLE -fstype=cifs,credentials=/home/cnnitouch/nt_creds.auth,rw,file_mode=0777,dir_mode=0777,noperm ://cnnvizfs-prod22/shared/ARKIV/new_arkiv/CNNT_WALL_TEASE
+viz_domestic -fstype=cifs,credentials=/home/cnnitouch/nt_creds.auth,ro,user ://turner.com/dfsbest/DomAvaill/Objectstore
