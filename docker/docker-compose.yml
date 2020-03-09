@@ -14,6 +14,7 @@ services:
       - /home/cnnitouch/html:/var/www/html
       - /mnt:/mnt
       - /mnt/data/shared_data/cnnimages:/var/www/html/cnnimages
+      - /etc/pki/tls/certs:/etc/pki/tls/certs
 
   mysql:
     command: --default-authentication-plugin=mysql_native_password
@@ -36,4 +37,18 @@ services:
     ports:
       - 8989:80
     restart: always
+
+  util_server:
+    build: ../../cnnitouch-util-server
+    container_name: util_server
+    ports:
+      - 8081:8081
+      - 8088:8088
+      - 8090:8090
+      - 8091:8091
+    restart: always
+    volumes:
+      - /home/cnnitouch/html:/var/www/html
+      - /mnt:/mnt:rshared
+      - /etc/pki/tls/certs:/etc/pki/tls/certs
 
