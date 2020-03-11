@@ -3,18 +3,19 @@ volumes:
   mysql-volume:
 
 services:
-  php:
-    build: ./php
-    container_name: php
+  apache:
+    build: ./apache
+    container_name: apache
     ports:
       - 80:80
+      - 443:443
     privileged: true
     restart: always
     volumes:
       - /home/cnnitouch/html:/var/www/html
       - /mnt:/mnt
       - /mnt/data/shared_data/cnnimages:/var/www/html/cnnimages
-      - /etc/pki/tls/certs:/etc/pki/tls/certs
+      - /home/cnnitouch/certs:/etc/ssl/certs
 
   mysql:
     command: --default-authentication-plugin=mysql_native_password
@@ -50,5 +51,18 @@ services:
     volumes:
       - /home/cnnitouch/html:/var/www/html
       - /mnt:/mnt:rshared
-      - /etc/pki/tls/certs:/etc/pki/tls/certs
+      - /home/cnnitouch/certs:/etc/pki/tls/certs
+      - /home/cnnitouch/logs/util_server:/var/log/util_server
+
+  nodetick:
+    build: ../../cnnitouch-nodetick
+    container_name: nodetick
+    ports:
+      - 7124:7124/udp
+      - 8080:8080
+      - 8084:8084
+      - 8085:8085
+    restart: always
+    volumes:
+      - /home/cnnitouch/certs:/etc/pki/tls/certs:shared
 
