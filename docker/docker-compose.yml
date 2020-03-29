@@ -15,7 +15,15 @@ services:
     restart: always
     volumes:
       - /home/cnnitouch/html:/var/www/html
-      - /mnt:/mnt
+      - /mnt/data:/mnt/data
+      - /mnt/viz:/mnt/viz
+      - /mnt/viz_domestic:/mnt/viz_domestic
+      - /mnt/CNNT_WALL_TEASE_WRITABLE:/mnt/CNNT_WALL_TEASE_WRITABLE
+      - /mnt/HD_STAYING_INFORMED_WRITABLE:/mnt/HD_STAYING_INFORMED_WRITABLE
+      - /mnt/HD_IMAGES_WRITABLE:/mnt/HD_IMAGES_WRITABLE
+      - /mnt/VISTA_BG_WRITABLE:/mnt/VISTA_BG_WRITABLE
+      - /mnt/VISTA_FULL_WRITABLE:/mnt/VISTA_FULL_WRITABLE
+      - /mnt/MAPS_DETAILED_WRITABLE:/mnt/MAPS_DETAILED_WRITABLE
       - /mnt/data/shared_data/cnnimages:/var/www/html/cnnimages
       - /home/cnnitouch/certs:/etc/ssl/certs
 
@@ -49,7 +57,7 @@ services:
     restart: always
     volumes:
       - /home/cnnitouch/certs:/etc/ssl/certs
-    
+
   phpmyadmin:
     build: ./phpmyadmin
     container_name: phpmyadmin
