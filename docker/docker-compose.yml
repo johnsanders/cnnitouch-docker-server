@@ -17,7 +17,7 @@ services:
       - /home/cnnitouch/html:/var/www/html
       - /mnt/data:/mnt/data
       - /mnt/viz:/mnt/viz
-      - /mnt/viz_domestic:/mnt/viz_domestic
+      # - /mnt/viz_domestic:/mnt/viz_domestic
       - /mnt/CNNT_WALL_TEASE_WRITABLE:/mnt/CNNT_WALL_TEASE_WRITABLE
       - /mnt/HD_STAYING_INFORMED_WRITABLE:/mnt/HD_STAYING_INFORMED_WRITABLE
       - /mnt/HD_IMAGES_WRITABLE:/mnt/HD_IMAGES_WRITABLE
