@@ -32,17 +32,17 @@ services:
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
-    image: mysql:8.0.19
+    image: mysql:8.0.20
     ports:
       - 3306:3306
     restart: always
     volumes:
-      - ./mysql/config:/etc/mysql/conf.d
+      - ./mysql:/etc/mysql/conf.d
       - mysql-volume:/var/lib/mysql
 
   mongo:
     container_name: mongo
-    image: mongo:4.0.16
+    image: mongo:4.2.7
     restart: always
     volumes:
       - mongo-volume:/data/db
