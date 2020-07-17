@@ -2,4 +2,4 @@
 *.swp
 *.swo
 server/localhost.key
-
+.DS_Store
