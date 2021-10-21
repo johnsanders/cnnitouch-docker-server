@@ -15,6 +15,7 @@ services:
     restart: always
     volumes:
       - /home/cnnitouch/html:/var/www/html
+      - /home/cnnitouch/htmlDiversity:/var/www/htmlDiversity
       - /mnt/data:/mnt/data
       - /mnt/viz:/mnt/viz
       # - /mnt/viz_domestic:/mnt/viz_domestic
@@ -107,7 +108,7 @@ services:
     restart: always
 
   multisync:
-    build: ../../cnnitouch-casparcg-control-server
+    build: ../../cnnitouch-multisync
     container_name: multisync
     ports:
       - 8082:8082
