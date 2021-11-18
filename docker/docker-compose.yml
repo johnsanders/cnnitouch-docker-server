@@ -58,6 +58,7 @@ services:
     restart: always
     volumes:
       - /home/cnnitouch/certs:/etc/ssl/certs
+      - /home/cnnitouch/.aws:/home/node/.aws
 
   phpmyadmin:
     build: ./phpmyadmin
