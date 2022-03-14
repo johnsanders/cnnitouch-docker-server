@@ -45,6 +45,8 @@ services:
     container_name: mongo
     image: mongo:4.2.7
     restart: always
+    ports:
+      - 27017:27017
     volumes:
       - mongo-volume:/data/db
 
@@ -80,12 +82,14 @@ services:
       - 8088:8088
       - 8090:8090
       - 8091:8091
+      - 8095:8095/udp
     restart: always
     volumes:
       - /home/cnnitouch/html:/var/www/html
       - /mnt:/mnt:rshared
       - /home/cnnitouch/certs:/etc/pki/tls/certs
       - /home/cnnitouch/logs/util_server:/var/log/util_server
+      - /home/cnnitouch/.aws:/home/node/.aws
 
   nodetick:
     build: ../../cnnitouch-nodetick
