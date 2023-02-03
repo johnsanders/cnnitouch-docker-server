@@ -94,8 +94,6 @@ services:
   nodetick:
     build: ../../cnnitouch-nodetick
     container_name: nodetick
-    depends_on:
-      - mysql
     ports:
       - 7124:7124/udp
       - 8080:8080
